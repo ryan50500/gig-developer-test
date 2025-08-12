@@ -1,0 +1,67 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.matchCard {
+  border: 1px solid #ccc;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.matchTitle {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.questionLabel {
+  margin-bottom: 15px;
+  color: #666;
+  font-weight: 500;
+}
+
+.choicesContainer {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.choiceButton {
+  padding: 15px 25px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 150px;
+  text-align: center;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.choiceButton:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.actorLabel {
+  margin-bottom: 5px;
+}
+
+.oddValue {
+  font-size: 18px;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.choiceButton:hover .oddValue {
+  color: white;
+}

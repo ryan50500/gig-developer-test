@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMatches } from '../features/matchesSlice';
+import styles from './MatchList.module.css';
 
 const MatchList = () => {
   const dispatch = useDispatch();
@@ -14,22 +15,23 @@ const MatchList = () => {
   if (status === 'failed') return <p>Error: {error}</p>;
 
   return (
-    <div>
+    <div className={styles.container}>
       {matchesData?.events.map(({ id, label, sport, bet }) => {
         const { question, choices } = Object.values(bet)[0];
 
         return (
-          <div key={id} className="match-card" style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
-            <h2>{label}</h2>
-    
-            <h3>{question.label}</h3>
-            <ul>
+          <div key={id} className={styles.matchCard}>
+            <h2 className={styles.matchTitle}>{label}</h2>
+            <h3 className={styles.questionLabel}>{question.label}</h3>
+            
+            <div className={styles.choicesContainer}>
               {choices.map(({ id, actor, odd }) => (
-                <li key={id}>
-                  {actor.label} — Odd: {odd}
-                </li>
+                <button key={id} className={styles.choiceButton}>
+                  <span className={styles.actorLabel}>{actor.label}</span>
+                  <span className={styles.oddValue}>{odd}</span>
+                </button>
               ))}
-            </ul>
+            </div>
           </div>
         );
       })}
