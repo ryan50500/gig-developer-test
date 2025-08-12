@@ -19,10 +19,20 @@ const bettingSlice = createSlice({
   },
   reducers: {
     addBet: (state, action) => {
-      state.betSlip.push(action.payload);
+      const existingBet = state.betSlip.find(bet => bet.choiceId === action.payload.choiceId);
+      if (!existingBet) {
+        state.betSlip.push(action.payload);
+      }
     },
     removeBet: (state, action) => {
       state.betSlip = state.betSlip.filter((bet) => bet.id !== action.payload);
+    },
+    updateStake: (state, action) => {
+      const { betId, newStake } = action.payload;
+      const bet = state.betSlip.find((bet) => bet.id === betId);
+      if (bet) {
+        bet.stake = newStake;
+      }
     },
   },
   extraReducers: (builder) => {
@@ -42,5 +52,5 @@ const bettingSlice = createSlice({
   },
 });
 
-export const { addBet, removeBet } = bettingSlice.actions;
+export const { addBet, removeBet, updateStake } = bettingSlice.actions;
 export default bettingSlice.reducer;

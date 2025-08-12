@@ -1,0 +1,185 @@
+.betSlipContainer {
+  background-color: #2f2f2f;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  text-align: center;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+}
+
+.emptyMessage {
+  color: #999999;
+  text-align: center;
+  font-style: italic;
+  margin: 20px 0;
+}
+
+.betsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.betCard {
+  background-color: #1a1a1a;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.betHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.matchName {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  flex: 1;
+  line-height: 1.2;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  color: #ff4444;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.betChoice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 8px;
+  background-color: #2f2f2f;
+  border-radius: 4px;
+}
+
+.choiceName {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.odds {
+  color: #ffdf1b;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.stakeSection {
+  margin-bottom: 15px;
+}
+
+.stakeLabel {
+  color: #cccccc;
+  font-size: 12px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.stakeControls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.stakeButton {
+  background-color: #444;
+  border: 1px solid #666;
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.stakeButton:hover {
+  background-color: #5c5c5c;
+}
+
+.stakeInput {
+  flex: 1;
+  background-color: #1a1a1a;
+  border: 1px solid #555;
+  color: #ffffff;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.stakeInput:focus {
+  outline: none;
+  border-color: #ffdf1b;
+}
+
+.potentialGains {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #444;
+}
+
+.gainsLabel {
+  color: #cccccc;
+  font-size: 12px;
+}
+
+.gainsAmount {
+  color: #00ff88;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.totalSection {
+  border-top: 2px solid #444;
+  padding-top: 15px;
+}
+
+.totalGains {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.totalLabel {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.totalAmount {
+  color: #00ff88;
+  font-weight: bold;
+  font-size: 18px;
+}

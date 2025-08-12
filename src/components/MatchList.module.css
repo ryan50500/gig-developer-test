@@ -28,6 +28,7 @@
 .matchHeader {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 8px;
 }
@@ -58,6 +59,7 @@
 
 .choicesContainer {
   display: flex;
+      flex-wrap: wrap;
   gap: 10px;
   align-items: center;
 }
@@ -82,6 +84,11 @@
 .choiceButton:hover {
   background-color: #5c5c5c;
   border-color: #777;
+}
+
+.choiceButtonSelected {
+  background-color: #5c5c5c !important;
+  border-color: #777 !important;
 }
 
 .actorLabel {
