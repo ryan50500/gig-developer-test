@@ -19,17 +19,23 @@ const Match = ({ id, label, sport, bet, start }) => {
 
   return (
     <div className={styles.matchCard}>
-      <h2 className={styles.matchTitle}>{label}</h2>
-      <h3 className={styles.questionLabel}>{sport.label}</h3>
-      <p className={styles.matchDate}>{formatDate(start)}</p>
-      
-      <div className={styles.choicesContainer}>
-        {choices.map(({ id, actor, odd }) => (
-          <button key={id} className={styles.choiceButton}>
-            <span className={styles.actorLabel}>{actor.label}</span>
-            <span className={styles.oddValue}>{odd}</span>
-          </button>
-        ))}
+      <div className={styles.matchLayout}>
+        <div className={styles.matchInfo}>
+          <div className={styles.matchHeader}>
+            <span className={styles.sportLabel}>{sport.label}</span>
+            <span className={styles.matchTitle}>{label}</span>
+          </div>
+          <p className={styles.matchDate}>{formatDate(start)}</p>
+        </div>
+        
+        <div className={styles.choicesContainer}>
+          {choices.map(({ id, actor, odd }) => (
+            <button key={id} className={styles.choiceButton}>
+              <span className={styles.actorLabel}>{actor.label}</span>
+              <span className={styles.oddValue}>{odd}</span>
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

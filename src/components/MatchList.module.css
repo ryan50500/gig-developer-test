@@ -14,41 +14,63 @@
   background-color: #2f2f2f;
 }
 
+.matchLayout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.matchInfo {
+  flex: 1;
+}
+
+.matchHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 8px;
+}
+
+.sportLabel {
+  background-color: #444;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .matchTitle {
-  margin-bottom: 10px;
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: bold;
   color: #ffffff;
 }
 
-.questionLabel {
-  margin-bottom: 8px;
-  color: #cccccc;
-  font-weight: 500;
-}
-
 .matchDate {
-  margin-bottom: 15px;
+  margin: 0;
   color: #999999;
   font-size: 14px;
   font-style: italic;
+  text-align: left;
 }
 
 .choicesContainer {
   display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 10px;
+  align-items: center;
 }
 
 .choiceButton {
-  padding: 15px 25px;
+  padding: 12px 20px;
   border: 1px solid #555;
   border-radius: 6px;
   background-color: #2f2f2f;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
-  min-width: 150px;
+  min-width: 120px;
   text-align: center;
   transition: all 0.2s ease;
   display: flex;
