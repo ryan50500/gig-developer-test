@@ -2,26 +2,35 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  background-color: #1a1a1a;
+  min-height: 100vh;
 }
 
 .matchCard {
-  border: 1px solid #ccc;
+  border: 1px solid #444;
   margin: 20px 0;
   padding: 20px;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #2f2f2f;
 }
 
 .matchTitle {
   margin-bottom: 10px;
   font-size: 24px;
-  color: #333;
+  color: #ffffff;
 }
 
 .questionLabel {
-  margin-bottom: 15px;
-  color: #666;
+  margin-bottom: 8px;
+  color: #cccccc;
   font-weight: 500;
+}
+
+.matchDate {
+  margin-bottom: 15px;
+  color: #999999;
+  font-size: 14px;
+  font-style: italic;
 }
 
 .choicesContainer {
@@ -33,9 +42,9 @@
 
 .choiceButton {
   padding: 15px 25px;
-  border: 2px solid #007bff;
-  border-radius: 8px;
-  background-color: white;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background-color: #2f2f2f;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
@@ -45,23 +54,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #ffffff;
 }
 
 .choiceButton:hover {
-  background-color: #007bff;
-  color: white;
+  background-color: #5c5c5c;
+  border-color: #777;
 }
 
 .actorLabel {
   margin-bottom: 5px;
+  color: #ffffff;
 }
 
 .oddValue {
   font-size: 18px;
   font-weight: bold;
-  color: #28a745;
+  color: #ffdf1b;
 }
 
 .choiceButton:hover .oddValue {
-  color: white;
+  color: #ffdf1b;
 }
