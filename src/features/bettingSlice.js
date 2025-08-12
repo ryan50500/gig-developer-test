@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 // Async thunk to fetch matches data
-export const fetchMatches = createAsyncThunk('bets/fetchMatches', async () => {
+export const fetchMatches = createAsyncThunk('betting/fetchMatches', async () => {
   const response = await fetch('/data/matches.json');
   if (!response.ok) {
     throw new Error('Failed to fetch matches data');
@@ -9,8 +9,8 @@ export const fetchMatches = createAsyncThunk('bets/fetchMatches', async () => {
   return response.json();
 });
 
-const matchesSlice = createSlice({
-  name: 'matches',
+const bettingSlice = createSlice({
+  name: 'betting',
   initialState: {
     betSlip: [],
     matchesData: null,
@@ -42,5 +42,5 @@ const matchesSlice = createSlice({
   },
 });
 
-export const { addBet, removeBet } = matchesSlice.actions;
-export default matchesSlice.reducer;
+export const { addBet, removeBet } = bettingSlice.actions;
+export default bettingSlice.reducer;

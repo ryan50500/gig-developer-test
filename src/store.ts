@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import matchesReducer from './features/matchesSlice'; 
+import bettingReducer from './features/bettingSlice.js';
 
 const store = configureStore({
   reducer: {
-    matches: matchesReducer,
+    betting: bettingReducer,
   },
 });
 

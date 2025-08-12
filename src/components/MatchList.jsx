@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMatches } from '../features/matchesSlice';
+import { fetchMatches } from '../features/bettingSlice';
 import styles from './MatchList.module.css';
 
 const MatchList = () => {
   const dispatch = useDispatch();
-  const { matchesData, status, error } = useSelector((state) => state.matches);
+  const { matchesData, status, error } = useSelector((state) => state.betting);
 
   useEffect(() => {
     dispatch(fetchMatches());
