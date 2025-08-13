@@ -1,69 +1,99 @@
-# React + TypeScript + Vite
+# Betting App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React betting application built with Vite and Redux Toolkit. Users can view matches, add bets to a bet slip, adjust stakes, and calculate potential winnings.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📱 View available matches with odds
+- 🎯 Add/remove bets from bet slip
+- 💰 Adjust stakes with +/- controls or manual input
+- 🧮 Real-time calculation of potential winnings
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 18** with Vite (TypeScript setup, primarily using JSX)
+- **Redux Toolkit** for state management
+- **Vite** for build tooling
+- **CSS Modules** for styling
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+*Note: Project was scaffolded with TypeScript but components are primarily written in JSX for faster development and reduced complexity with Redux integration.*
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Quick Start
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. **Extract the project**
+   - Double-click the zip file to extract it
+   - Open Terminal/Command Prompt and navigate to the extracted folder:
+   ```bash
+   # Example: if extracted to Desktop
+   cd Desktop/gig-developer-test
+   
+   # Or if extracted to Downloads
+   cd Downloads/gig-developer-test
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:5173`
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── BetItem.jsx     # Individual bet card
+│   ├── BetHeader.jsx   # Bet card header
+│   ├── BetChoice.jsx   # Bet choice display
+│   ├── BetSlip.jsx     # Main bet slip container
+│   ├── StakeControls.jsx # Stake input controls
+│   ├── PotentialGains.jsx # Potential winnings display
+│   ├── BetSlipSummary.jsx # Total calculations
+│   ├── Match.jsx       # Individual match display
+│   └── MatchList.jsx   # List of all matches
+├── features/
+│   └── bettingSlice.js # Redux slice for betting state
+├── App.tsx             # Main app component
+└── store.ts            # Redux store configuration
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## How to Use
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Browse available matches in the left panel
+2. Click on odds to add bets to your bet slip
+3. Adjust stakes using +/- buttons or type directly
+4. View real-time potential winnings calculations
+5. Remove bets using the × button
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Implementation Notes
+
+**Completed Features:**
+- ✅ Match display with odds and real-time data loading
+- ✅ Bet slip functionality with add/remove capabilities
+- ✅ Stake adjustment with validation (minimum £0.50)
+- ✅ Real-time potential winnings calculations
+- ✅ Professional UI with bet365-inspired design
+- ✅ Responsive layout with proper component architecture
+
+**Design Decisions:**
+- **No Submit Button**: While mentioned in requirements, a submit button seemed redundant for this demo. The focus is on showcasing React/Redux skills rather than backend integration. In a real app, this would connect to a betting API.
+- **Component Architecture**: Chose to break down complex components (like BetItem) into smaller, focused components (BetHeader, BetChoice, etc.) for better maintainability and testability.
+- **JSX over TypeScript**: Started with TypeScript setup but switched to JSX for faster development and reduced complexity with Redux integration.
+- **CSS Modules**: Used CSS modules over styled-components for better performance and simpler debugging.
+
+Built with ❤️ for the interview process.
+
