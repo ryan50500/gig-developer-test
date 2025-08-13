@@ -1,7 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeBet, updateStake } from '../features/bettingSlice';
+import BetHeader from './BetHeader';
+import BetChoice from './BetChoice';
 import StakeControls from './StakeControls';
+import PotentialGains from './PotentialGains';
 import styles from './BetSlip.module.css';
 
 const BetItem = ({ bet }) => {
@@ -23,30 +26,13 @@ const BetItem = ({ bet }) => {
 
   return (
     <div className={styles.betCard}>
-      <div className={styles.betHeader}>
-        <span className={styles.matchName}>{bet.matchName}</span>
-        <button 
-          className={styles.removeButton}
-          onClick={handleRemoveBet}
-        >
-          ×
-        </button>
-      </div>
-      
-      <div className={styles.betChoice}>
-        <span className={styles.choiceName}>{bet.choice}</span>
-        <span className={styles.odds}>{bet.odds}</span>
-      </div>
-      
+      <BetHeader matchName={bet.matchName} onRemove={handleRemoveBet} />
+      <BetChoice choice={bet.choice} odds={bet.odds} />
       <StakeControls 
         stake={bet.stake}
         onStakeChange={handleStakeChange}
       />
-      
-      <div className={styles.potentialGains}>
-        <span className={styles.gainsLabel}>Potential gains:</span>
-        <span className={styles.gainsAmount}>£{calculatePotentialGains()}</span>
-      </div>
+      <PotentialGains gains={calculatePotentialGains()} />
     </div>
   );
 };
