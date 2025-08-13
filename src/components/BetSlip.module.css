@@ -137,6 +137,18 @@
   font-weight: bold;
 }
 
+/* Hide the ugly spinner arrows on number inputs */
+.stakeInput::-webkit-outer-spin-button,
+.stakeInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+.stakeInput[type=number] {
+  -moz-appearance: textfield;
+}
+
 .stakeInput:focus {
   outline: none;
   border-color: #ffdf1b;
