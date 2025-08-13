@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMatches } from '../features/bettingSlice';
+import { fetchMatches } from '../../features/bettingSlice';
 import Match from './Match';
 import styles from './MatchList.module.css';
 

@@ -1,6 +1,6 @@
 import './App.css'
-import MatchList from './components/MatchList';
-import BetSlip from './components/BetSlip';
+import MatchList from './components/matches/MatchList';
+import BetSlip from './components/betting/BetSlip';
 
 function App() {
 

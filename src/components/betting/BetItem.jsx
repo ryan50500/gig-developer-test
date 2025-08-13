@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { removeBet, updateStake } from '../features/bettingSlice';
+import { removeBet, updateStake } from '../../features/bettingSlice';
 import BetHeader from './BetHeader';
 import BetChoice from './BetChoice';
 import StakeControls from './StakeControls';

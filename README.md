@@ -2,13 +2,6 @@
 
 A React betting application built with Vite and Redux Toolkit. Users can view matches, add bets to a bet slip, adjust stakes, and calculate potential winnings.
 
-## Features
-
-- 📱 View available matches with odds
-- 🎯 Add/remove bets from bet slip
-- 💰 Adjust stakes with +/- controls or manual input
-- 🧮 Real-time calculation of potential winnings
-
 ## Tech Stack
 
 - **React 18** with Vite (TypeScript setup, primarily using JSX)
@@ -21,14 +14,9 @@ A React betting application built with Vite and Redux Toolkit. Users can view ma
 ## Quick Start
 
 1. **Extract the project**
-   - Double-click the zip file to extract it
-   - Open Terminal/Command Prompt and navigate to the extracted folder:
+   - Extract the zip file and navigate to the folder in Terminal:
    ```bash
-   # Example: if extracted to Desktop
-   cd Desktop/gig-developer-test
-   
-   # Or if extracted to Downloads
-   cd Downloads/gig-developer-test
+   cd path/to/gig-developer-test
    ```
 
 2. **Install dependencies**
@@ -48,25 +36,34 @@ A React betting application built with Vite and Redux Toolkit. Users can view ma
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
-- `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
+- `npm run test` - Run tests in watch mode
+- `npm run test:run` - Run tests once
 
 ## Project Structure
 
 ```
 src/
 ├── components/          # React components
-│   ├── BetItem.jsx     # Individual bet card
-│   ├── BetHeader.jsx   # Bet card header
-│   ├── BetChoice.jsx   # Bet choice display
-│   ├── BetSlip.jsx     # Main bet slip container
-│   ├── StakeControls.jsx # Stake input controls
-│   ├── PotentialGains.jsx # Potential winnings display
-│   ├── BetSlipSummary.jsx # Total calculations
-│   ├── Match.jsx       # Individual match display
-│   └── MatchList.jsx   # List of all matches
+│   ├── matches/         # Match-related components
+│   │   ├── MatchList.jsx       # List of all matches
+│   │   ├── Match.jsx           # Individual match display
+│   │   ├── MatchHeader.jsx     # Match info header
+│   │   ├── ChoicesContainer.jsx # Container for bet choices
+│   │   └── ChoiceButton.jsx    # Individual choice button
+│   └── betting/         # Bet slip components
+│       ├── BetSlip.jsx         # Main bet slip container
+│       ├── BetItem.jsx         # Individual bet card
+│       ├── BetHeader.jsx       # Bet card header
+│       ├── BetChoice.jsx       # Bet choice display
+│       ├── StakeControls.jsx   # Stake input controls
+│       ├── PotentialGains.jsx  # Potential winnings display
+│       └── BetSlipSummary.jsx  # Total calculations
 ├── features/
 │   └── bettingSlice.js # Redux slice for betting state
+├── test/               # Test files
+│   ├── setup.js              # Test configuration
+│   └── BetSlipSummary.test.jsx # Unit tests
 ├── App.tsx             # Main app component
 └── store.ts            # Redux store configuration
 ```
@@ -79,21 +76,39 @@ src/
 4. View real-time potential winnings calculations
 5. Remove bets using the × button
 
-## Implementation Notes
+## Features
 
-**Completed Features:**
-- ✅ Match display with odds and real-time data loading
-- ✅ Bet slip functionality with add/remove capabilities
-- ✅ Stake adjustment with validation (minimum £0.50)
-- ✅ Real-time potential winnings calculations
-- ✅ Professional UI with bet365-inspired design
-- ✅ Responsive layout with proper component architecture
+- Match display with odds loaded from JSON data
+- Add/remove bets with duplicate prevention  
+- Real-time potential winnings calculations
+- Stake controls with £0.50 minimum enforcement and input validation
 
-**Design Decisions:**
-- **No Submit Button**: While mentioned in requirements, a submit button seemed redundant for this demo. The focus is on showcasing React/Redux skills rather than backend integration. In a real app, this would connect to a betting API.
-- **Component Architecture**: Chose to break down complex components (like BetItem) into smaller, focused components (BetHeader, BetChoice, etc.) for better maintainability and testability.
+## Development Time
+
+**Estimated vs Actual**: While the assessment suggested 2-4 hours, this implementation took 6-8 hours due to implementing all non-mandatory features:
+
+- Functional increase/decrease buttons with validation
+- Direct stake input with edge case handling (non-numeric input, negative values, empty fields)  
+- Real-time calculation updates
+- Unit testing setup
+
+## Testing
+
+Built with Vitest and React Testing Library.
+
+```bash
+npm run test        # Watch mode
+npm run test:run    # Single run
+```
+
+**Coverage**: Unit test for calculation logic (BetSlipSummary component)
+
+
+## Design Decisions
+
+- **No Submit Button**: While a submit button appears in the mockup, it was omitted as no functionality requirements were specified. This demo focuses on showcasing React/Redux skills and component architecture rather than backend integration. In a production app, this would connect to a betting API to process bets placed.
+- **Component Architecture**: Chose to break down complex components (like BetItem) into smaller, focused components (BetHeader, BetChoice, etc.) for better maintainability.
 - **JSX over TypeScript**: Started with TypeScript setup but switched to JSX for faster development and reduced complexity with Redux integration.
-- **CSS Modules**: Used CSS modules over styled-components for better performance and simpler debugging.
+- **Styling Approach**: The provided mockup was more of a basic wireframe without detailed design, so I implemented a bet365-inspired design to create a more visually appealing UI.
 
-Built with ❤️ for the interview process.
 

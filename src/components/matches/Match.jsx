@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addBet, removeBet } from '../features/bettingSlice';
+import { addBet, removeBet } from '../../features/bettingSlice';
+import MatchHeader from './MatchHeader';
+import ChoicesContainer from './ChoicesContainer';
 import styles from './MatchList.module.css';
 
 const Match = ({ id, label, sport, bet, start }) => {
@@ -48,26 +50,17 @@ const Match = ({ id, label, sport, bet, start }) => {
   return (
     <div className={styles.matchCard}>
       <div className={styles.matchLayout}>
-        <div className={styles.matchInfo}>
-          <div className={styles.matchHeader}>
-            <span className={styles.sportLabel}>{sport.label}</span>
-            <span className={styles.matchTitle}>{label}</span>
-          </div>
-          <p className={styles.matchDate}>{formatDate(start)}</p>
-        </div>
-        
-        <div className={styles.choicesContainer}>
-          {choices.map((choice) => (
-            <button 
-              key={choice.id} 
-              className={`${styles.choiceButton} ${isBetSelected(choice.id) ? styles.choiceButtonSelected : ''}`}
-              onClick={() => handleToggleBet(choice)}
-            >
-              <span className={styles.actorLabel}>{choice.actor.label}</span>
-              <span className={styles.oddValue}>{choice.odd}</span>
-            </button>
-          ))}
-        </div>
+        <MatchHeader 
+          sport={sport}
+          label={label}
+          start={start}
+          formatDate={formatDate}
+        />
+        <ChoicesContainer 
+          choices={choices}
+          isBetSelected={isBetSelected}
+          handleToggleBet={handleToggleBet}
+        />
       </div>
     </div>
   );
